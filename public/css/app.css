@@ -1,0 +1,26 @@
+:root {
+    --primary: #1abc9c;
+    --secondary: #2c3e50;
+    --third: #1a252f;
+}
+
+.bg-primary {
+    background-color: var(--primary) !important;
+}
+
+.bg-secondary {
+    background-color: var(--secondary);
+}
+
+.copyright {
+    background-color: var(--third);
+}
+
+nav {
+    font-weight: 700;
+}
+
+.img-card {
+    height: 18vw;
+    object-fit: cover;
+}
