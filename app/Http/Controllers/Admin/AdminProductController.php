@@ -7,9 +7,12 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Pagination\Paginator;
+use RealRashid\SweetAlert\Facades\Alert;
 
-class AdminProductController extends Controller
-{
+
+
+
+class AdminProductController extends Controller{
     public function index()
     {
         Paginator::useBootstrap();
@@ -28,9 +31,9 @@ class AdminProductController extends Controller
             "image" => [
                 "image",
                 "required",
-                File::image()
-                    ->min(1024)
-                    ->max(12 * 1024)
+                // File::image()
+                //     ->min(1024)
+                //     ->max(12 * 1024)
             ]
         ]);
 
@@ -57,7 +60,14 @@ class AdminProductController extends Controller
 
     public function delete($id)
     {
+        $title = 'Warning!';
+        $text = "Kamu yakin ingin menghapus?";
+        confirmDelete($title, $text);
+        
         Product::destroy($id);
+
+        Alert::alert('Warning', 'Kamu yakin ingin menghapus', 'Type');
+        
         return back();
     }
 
@@ -66,7 +76,12 @@ class AdminProductController extends Controller
         $viewData = [];
         $viewData["title"] = "Admin Page - Edit Product - Online Store";
         $viewData["product"] = Product::findOrFail($id);
+
+        
+       
         return view('admin.product.edit')->with("viewData", $viewData);
+
+        
     }
 
     public function update(Request $request, $id)
@@ -90,8 +105,9 @@ class AdminProductController extends Controller
                 file_get_contents($request->file('image')->getRealPath())
             );
         }
-
         $product->save();
+        Alert::alert('Warning', 'Kamu yakin ingin mengedit', 'Type');
+
         return redirect()->route("admin.product.index");
     }
 }

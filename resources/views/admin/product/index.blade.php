@@ -40,7 +40,7 @@
                     <div class="col">
                         <div class="mb-3 row">
                             <label for="name" class="col-lg-2 col-md-6 col-sm-12 col-form-label">
-                                Name :
+                                Name:
                             </label>
                             <div class="col-lg-10 col-md-6 col-sm-12">
                                 <input id="name" name="name" value="{{ old('name') }}" type="text" class="form-control">
@@ -59,7 +59,9 @@
                         </div>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label">Description</label>
+                        <label class="form-label">
+                            Description :
+                        </label>
                         <textarea class="form-control" name="description" rows="3">
                             {{ old('description') }}
                         </textarea>
@@ -90,18 +92,26 @@
                     <td>{{ $product->getId() }}</td>
                     <td>{{ $product->getName() }}</td>
                     <td>
+                        
+                        
+                        
+                        
                         <a class="btn btn-primary"
                            href="{{ route("admin.product.edit", ['id' => $product->getId()] ) }}">
-                            <i class="bi-pencil"></i> Edit
+                            <i class="bi-pencil" id="edit"></i> Edit
                         </a>
+                        
+                   
+                        
                     </td>
                     <td>
                         <form action="{{ route('admin.product.delete', $product->getId()) }}" method="post">
                             @csrf
                             @method("DELETE")
-                            <button class="btn btn-danger">
-                                <i class="bi-trash"></i> Delete
-                            </button>
+                                <button class="btn btn-danger" data-confirm-delete="true">
+                                        
+                                    <i class="bi-trash" id="delete"></i> Delete
+                                </button>
                         </form>
                     </td>
                 </tr>
@@ -111,8 +121,9 @@
         <ul class="d-flex pagination">
             <li class="page-item">
                 <a class="page-link">{{ $viewData["products"]->links() }}</a>
-            </li>
-        </ul>
+            </li>  
+        </nav>
+        
     </div>
 
 @endsection

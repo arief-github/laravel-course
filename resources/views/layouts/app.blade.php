@@ -42,7 +42,7 @@
         </div>
     </div>
 </nav>
-<header class="masthead bg-primary text-white text-center py-4">
+<header class="masthead  text-black text-center py-4">
     <div class="container d-flex align-items-center flex-column">
         <h2>@yield('subtitle', 'A Laravel Online Store')</h2>
     </div>
@@ -52,9 +52,9 @@
     @yield('content')
 </div>
 <!-- footer -->
-<div class="copyright py-4 text-center text-white">
-    <div class="container">
+<div class="copyright bg-white py- text-center text-black  ">
         <small>
+            
             Copyright - <a class="text-reset fw-bold text-decoration-none" target="_blank"
                            href="https://twitter.com/danielgarax">
                 Arief Kurniawan

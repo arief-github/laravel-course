@@ -32,6 +32,6 @@ class ProductController extends Controller
         $viewData["title"] = $product->getName() . "- Online Store";
         $viewData["subtitle"] = $product->getName() . "- Product Information";
         $viewData["product"] = $product;
-        return view("product.show")->with("viewData", $viewData);
+        return view ("product.show")->with("viewData", $viewData);
     }
 }
