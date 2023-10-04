@@ -7,6 +7,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Pagination\Paginator;
+
+
 use RealRashid\SweetAlert\Facades\Alert;
 
 
@@ -24,24 +26,27 @@ class AdminProductController extends Controller{
 
     public function store(Request $request)
     {
+       // dd($request);
         $request->validate([
+            // Validasi nama dan price menjadi required
             "name" => "required|max:255",
-            "description" => "required",
             "price" => "required|numeric|gt:0",
+            // Validasi required deskripsi di hilangkan
+            "description",
+            // Validasi image dengan required dan file harus jpg dan png, dengan maksimal ukuran file 2mb
             "image" => [
                 "image",
-                "required",
-                // File::image()
-                //     ->min(1024)
-                //     ->max(12 * 1024)
-            ]
+                "required","mimes:jpg,png",
+                'max:2048'
+                ],
         ]);
 
         $newProduct = new Product();
         $newProduct->setName($request->input('name'));
         $newProduct->setDescription($request->input('description'));
         $newProduct->setPrice($request->input('price'));
-        $newProduct->setImage('game.png');
+        // Set image dari image yang di validasi
+        $newProduct->setImage($request->file('image'));
         $newProduct->save();
 
         if ($request->hasFile("image")) {
