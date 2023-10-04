@@ -34,6 +34,7 @@
                                         <label for="image" class="col-lg-12 col-md-6 col-sm-12 col-form-label">Image:</label>
                                         <div class="col-lg-10 col-md-6 col-sm-12">
                                             <input type="file" class="form-control" id="image" name="image">
+                                            
                                         </div>
                                     </div>
                                 </div>
@@ -55,10 +56,12 @@
                                 <textarea class="form-control" name="description" rows="3">
                                     {{ $viewData['product']->getDescription() }}
                                 </textarea>
-                            </div>
+                          
+                              
                             <button type="submit" class="btn btn-primary">
                                 Edit
                             </button>
+                           
                         </div>
                     </div>
                 </div>

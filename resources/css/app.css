@@ -1,0 +1,12 @@
+.class-pagination{
+
+        display: inline-block !important;
+      }
+      
+.class-pagination a {
+        color: black !important;
+        float: left !important;
+        padding: 8px 16px !important;
+        text-decoration: none !important;
+      }
+}

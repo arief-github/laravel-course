@@ -48,7 +48,7 @@
     </div>
 </div>
 
-<div class="copyright py-4 text-center text-white">
+<div class="copyright py-4 text-center text-da">
     <div class="container">
         <small>
             Copyright - <a class="text-reset fw-bold text-decoration-none" href="https://github.com/arief-github">
@@ -59,6 +59,10 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="text/javascript">
+    </script>
 </script>
+@include('sweetalert::alert')
 </body>
 </html>
