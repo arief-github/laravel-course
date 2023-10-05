@@ -92,38 +92,30 @@
                     <td>{{ $product->getId() }}</td>
                     <td>{{ $product->getName() }}</td>
                     <td>
-                        
-                        
-                        
-                        
+
+
                         <a class="btn btn-primary"
                            href="{{ route("admin.product.edit", ['id' => $product->getId()] ) }}">
                             <i class="bi-pencil" id="edit"></i> Edit
                         </a>
-                        
-                   
-                        
+
+
                     </td>
                     <td>
                         <form action="{{ route('admin.product.delete', $product->getId()) }}" method="post">
                             @csrf
                             @method("DELETE")
-                                <button class="btn btn-danger" data-confirm-delete="true">
-                                        
-                                    <i class="bi-trash" id="delete"></i> Delete
-                                </button>
+                            <button class="btn btn-danger" data-confirm-delete="true">
+
+                                <i class="bi-trash" id="delete"></i> Delete
+                            </button>
                         </form>
                     </td>
                 </tr>
             @endforeach
             </tbody>
         </table>
-        <ul class="d-flex pagination">
-            <li class="page-item">
-                <a class="page-link">{{ $viewData["products"]->links() }}</a>
-            </li>  
-        </nav>
-        
+        <div class="d-flex justify-content-center">{!! $viewData["products"]->links() !!}</div>
     </div>
 
 @endsection
