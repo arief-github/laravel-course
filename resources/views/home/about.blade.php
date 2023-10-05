@@ -3,49 +3,98 @@
 @section('subtitle', $subtitle)
 @section('content')
 
-<section class="about-us">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6">
-                <h2>Misi Kami</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget luctus purus. Vestibulum malesuada turpis nec tellus dapibus, ac vulputate ex feugiat. Curabitur cursus ex vel felis aliquet malesuada.</p>
-            </div>
-            <div class="col-lg-6">
-                <h2>Visi Kami</h2>
-                <p>Integer nec urna vel ex vehicula posuere. Duis lacinia quam a augue tincidunt, vel volutpat dui gravida. Etiam et nisi ut ipsum finibus tempus.</p>
-            </div>
-        </div>
-    </div>
-</section>
+    {{-- Mengisi Body pada about Page --}}
+    <!-- Services Section Start -->
+    <section id="services" class="section">
+        <div class="container">
+            <div class="row">
+                <!-- Start Col -->
+                <div class="col-lg-4 col-md-6 col-xs-12">
+                    <div class="services-item text-center">
+                        <div class="business-item-img">
+                            <img src="img/electroo.png" class="img-fluid" alt="">
+                        </div>
+                        <h4>Electronic </h4>
+                        <p>Produk yang menggunakan teknologi manipulasi arus listrik atau sinyal elektronik untuk
+                            melakukan tugas-tugas tertentu,
+                            seperti Mesin Cuci, Kulkas, Smartphone, Laptop, Televisi dll. elektronik mencakup berbagai
+                            produk yang menjadi bagian integral dari kehidupan sehari-hari.
+                        </p>
+                    </div>
+                </div>
+                <!-- End Col -->
 
-<section class="team">
-    <CENTER>
-    <div class="container">
-        <h2>Tim Kami</h2>
-        <div class="row">
-            <div class="col-md-2">
-                <div class="team-member">
-                    <img src="{{ asset('/img/logo.png')  }}" alt="" class="img-fluid rounded">
-                    <h3>John Doe</h3>
-                    <p>CEO</p>
+                <!-- Start Col -->
+                <div class="col-lg-4 col-md-6 col-xs-12">
+                    <div class="services-item text-center">
+                        <div class="business-item-img">
+                            <img src="img/Pashion.png" class="img-fluid" alt="">
+                        </div>
+                        <h4>Fashion</h4>
+                        <p>Produk yang terkait dengan industri pakaian dan gaya, mencakup berbagai jenis barang yang
+                            digunakan untuk mengekspresikan gaya, selera, dan tren mode.
+                            Seperti Pakaian, Aksesoris, Kosmetik, Tas, Dompet dll. fashion selalu berkembang mengikuti
+                            perubahan tren dan selera konsumen.
+
+                        </p>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-2">
-                <div class="team-member">
-            <img src="{{ asset('/img/game.png')  }}" alt="" class="img-fluid rounded">
-                    <h3>Jane Smith</h3>
-                    <p>CFO</p>
+                <!-- End Col -->
+
+                <!-- Start Col -->
+                <div class="col-lg-4 col-md-6 col-xs-12">
+                    <div class="services-item text-center">
+                        <div class="business-item-img">
+                            <img src="img/otomotif.png" class="img-fluid" alt="">
+                        </div>
+                        <div class="">
+                        </div>
+                        <h4>Automotive</h4>
+                        <p> Produk yang terkait dengan industri kendaraan baik itu mobil, sepeda motor, truk, atau
+                            kendaraan komersial lainnya.
+                            Mencakup berbagai suku cadang seperti Oli, Ban, Velg, Pelumas dll.
+                            Aspek otomotif suku cadang ini juga berfungsi sebagai merawat, dan meningkatkan kualitas
+                            kendaraan.
+                        </p>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-2">
-                <div class="team-member">
-                    <img src="{{ asset('/img/safe.png')  }}" alt="" class="img-fluid rounded">
-                    <h3>David Johnson</h3>
-                    <p>CTO</p>
-                </div>
+                <!-- End Col -->
+
             </div>
         </div>
-    </div>
-    </CENTER>
-</section>
+    </section>
+    <!-- Services Section End -->
+
+
+
+    <!-- Business Plan Section Start -->
+    <section id="business-plan">
+        <div class="container">
+
+            <div class="row">
+                <!-- Start Col -->
+                <div class="col-lg-6 col-md-12 pl-0 pt-100 pr-5">
+                    <div class="business-item-img">
+                        <img src="img/work1.png" class="img-fluid" alt="">
+                    </div>
+                </div>
+                <!-- End Col -->
+                <!-- Start Col -->
+                <div class="col-lg-6 col-md-12 pl-4">
+                    <div class="business-item-info">
+                        <h3>Yellobox.ID Ecommerce</h3>
+                        {{-- <h2> Ecommerce</h2> --}}
+                        <p>Yellobox.id adalah perusahaan e-commerce terkemuka yang didirikan pada tahun 2022. Dimulai
+                            sebagai toko online yang berfokus pada penjualan otomotif, tetapi seiring waktu berjalan
+                            Yellobox
+                            berkembang pesat dan diversifikasi ke berbagai kategori produk termasuk elektronik,
+                            pakaian, peralatan rumah tangga, dan banyak lagi.</p>
+
+                        <a class="btn btn-warning text-white" href="#">Produk Kami</a>
+                    </div>
+                </div>
+                <!-- End Col -->
+                < </div>
+            </div>
+    </section>
 @endsection
