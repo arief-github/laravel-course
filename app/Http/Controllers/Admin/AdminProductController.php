@@ -24,19 +24,19 @@ class AdminProductController extends Controller
     public function store(Request $request)
     {
        // dd($request);
-        $request->validate([
-            // Validasi nama dan price menjadi required
-            "name" => "required|max:255",
-            "price" => "required|numeric|gt:0",
-            // Validasi required deskripsi di hilangkan
-            "description",
-            // Validasi image dengan required dan file harus jpg dan png, dengan maksimal ukuran file 2mb
-            "image" => [
-                "image",
-                "required","mimes:jpg,png",
-                'max:2048'
-                ],
-        ]);
+            $request->validate([
+                // Validasi nama dan price menjadi required
+                "name" => "required|max:255",
+                "price" => "required|numeric|gt:0",
+                // Validasi required deskripsi di hilangkan
+                "description" ,  
+                // Validasi image dengan required dan file harus jpg dan png, dengan maksimal ukuran file 2mb
+                "image" => [
+                    "image",
+                    "required","mimes:jpg,png",
+                    'max:2048'
+                    ],
+            ]);
 
         $newProduct = new Product();
         $newProduct->setName($request->input('name'));
